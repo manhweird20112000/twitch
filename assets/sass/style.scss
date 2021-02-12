@@ -481,9 +481,9 @@ input,
     left: 0;
     right: 0;
     background: rgba($color: #000000, $alpha: 0.8);
-    display: flex;
-    align-items: center;
+    @include flexBox();
     justify-content: center;
+    visibility: hidden;
     .wrapper-form {
         width: 422px;
         background: white;
@@ -528,7 +528,7 @@ input,
                 color: $color-primary;
             }
             .line-form {
-                width: 75px;
+                width: 0;
                 height: 3px;
                 background: $color-primary;
                 @include positison("bl", -2px, 0);
@@ -678,4 +678,8 @@ input,
             background: rgba($color: $second-primary, $alpha: 0.5);
         }
     }
+}
+
+.active-overlay {
+    visibility: visible;
 }

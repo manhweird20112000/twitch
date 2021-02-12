@@ -580,6 +580,7 @@ input,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  visibility: hidden;
 }
 
 .overlay .wrapper-form {
@@ -645,7 +646,7 @@ input,
 }
 
 .overlay .wrapper-form .tabs-form .line-form {
-  width: 75px;
+  width: 0;
   height: 3px;
   background: #976efa;
   position: absolute;
@@ -822,5 +823,9 @@ input,
 
 .overlay .close-form:hover {
   background: rgba(229, 229, 229, 0.5);
+}
+
+.active-overlay {
+  visibility: visible;
 }
 /*# sourceMappingURL=style.css.map */

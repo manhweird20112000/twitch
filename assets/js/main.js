@@ -30,31 +30,60 @@ let overlay = document.querySelector('.overlay');
 
 let btnRegister = document.querySelector('.btn--register');
 
+let btnLogin = document.querySelector('.btn--login');
 
-tabsForm.forEach((tabForm, index) => {
+btnLogin.onclick = function() {
+    overlay.classList.toggle('active-overlay');
+    let tab = document.querySelector('.form-item__login');
+    let headingForm = document.querySelector('.form-heading__login');
+    let mainForm = document.querySelector('.form-login');
+    tab.classList.add('active-tab');
+    headingForm.classList.add('show-title');
+    mainForm.classList.add('show-form');
 
-    let lineTabForm = document.querySelector('.line-form');
+    tabFormOverlay();
+}
 
-    tabForm.addEventListener('click', function() {
-        let activeTab = document.querySelector('.active-tab');
-        let activeHeading = document.querySelector('.show-title');
-        let activeForm = document.querySelector('.show-form');
+btnRegister.onclick = function() {
+    overlay.classList.toggle('active-overlay');
+    let tab = document.querySelector('.form-item__register');
+    let headingForm = document.querySelector('.form-heading__register');
+    let mainForm = document.querySelector('.form-register');
 
-        lineTabForm.style.left = tabForm.offsetLeft + "px";
-        lineTabForm.style.width = tabForm.offsetWidth + "px";
+    tab.classList.add('active-tab');
+    headingForm.classList.add('show-title');
+    mainForm.classList.add('show-form');
 
-        activeHeading.classList.remove('show-title');
-        headForms[index].classList.add('show-title');
+    tabFormOverlay();
 
-        activeForm.classList.remove('show-form');
-        formList[index].classList.add('show-form');
+}
+
+function tabFormOverlay() {
+    tabsForm.forEach((tabForm, index) => {
+
+        let lineTabForm = document.querySelector('.line-form');
+
+        tabForm.addEventListener('click', function() {
+            let activeTab = document.querySelector('.active-tab');
+            let activeHeading = document.querySelector('.show-title');
+            let activeForm = document.querySelector('.show-form');
+
+            lineTabForm.style.left = tabForm.offsetLeft + "px";
+            lineTabForm.style.width = tabForm.offsetWidth + "px";
+
+            activeHeading.classList.remove('show-title');
+            headForms[index].classList.add('show-title');
+
+            activeForm.classList.remove('show-form');
+            formList[index].classList.add('show-form');
 
 
-        activeTab.classList.remove('active-tab');
-        tabForm.classList.add('active-tab');
+            activeTab.classList.remove('active-tab');
+            tabForm.classList.add('active-tab');
+        })
     })
-})
 
+}
 btnAccount.onclick = function() {
     optionAccount.classList.toggle("show");
 }
@@ -64,7 +93,9 @@ menuOption.addEventListener('click', function() {
 })
 
 tabs.forEach((tab, index) => {
+
     tab.addEventListener('click', function() {
+        tab.classList.add('active-item');
         let tabActive = document.querySelector('.main-menu .active-item');
 
         tabActive.classList.remove('active-item');
@@ -89,6 +120,7 @@ function closeForm() {
 
     btnClose.addEventListener('click', function() {
         overlay.style.display = 'none';
+
     })
 }
 closeForm();

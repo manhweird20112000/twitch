@@ -26,7 +26,7 @@
                     </a>
                 </div>
                 <div class="main-menu">
-                    <div class="main-menu__item main-menu__item--vertical active-item">
+                    <div class="main-menu__item main-menu__item--vertical ">
                         <span>
                             Duyệt
                         </span>
@@ -237,25 +237,25 @@
                 <div class="form-heading">
                     <i class="fab fa-twitch form-heading__icon"></i>
                     <div class="form-heading__title">
-                        <p class="show-title">
+                        <p class="form-heading__login">
                             Đăng nhập Twitch
                         </p>
-                        <p>
+                        <p class="form-heading__register">
                             Tham gia Twitch ngay hôm nay
                         </p>
                     </div>
                 </div>
                 <div class="tabs-form">
-                    <div class="tabs-form__item active-tab">
+                    <div class="tabs-form__item form-item__login">
                         Đăng nhập
                     </div>
-                    <div class="tabs-form__item">
+                    <div class="tabs-form__item form-item__register">
                         Đăng ký
                     </div>
                     <div class="line-form"></div>
                 </div>
                 <div class="form__list">
-                    <form action="" method="post" id="login" class="form__item show-form">
+                    <form action="" method="post" id="login" class="form__item form-login ">
                         <div class="form-group">
                             <label for="username-login">Tên người dùng</label>
                             <input type="text" name="username-login" id="username-login">
@@ -292,7 +292,7 @@
                                 </button>
                         </div>
                     </form>
-                    <form action="" method="post" class="form__item " id="register">
+                    <form action="" method="post" class="form__item form-register" id="register">
                         <div class="form-group">
                             <label for="username">Tên người dùng</label>
                             <input type="text" name="" id="username">
