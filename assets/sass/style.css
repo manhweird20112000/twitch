@@ -587,16 +587,12 @@ input,
   background: white;
   padding: 20px;
   border-radius: 10px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .overlay .wrapper-form .form-heading {
   margin: 20px 0 10px 0;
-}
-
-.overlay .wrapper-form .form-heading .form-heading__item {
-  text-align: center;
-  font-size: 2em;
-  font-weight: 600;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -608,10 +604,20 @@ input,
           justify-content: center;
 }
 
-.overlay .wrapper-form .form-heading .form-heading__item .form-heading__icon {
+.overlay .wrapper-form .form-heading .form-heading__icon {
+  font-size: 4em;
   color: #976efa;
-  font-size: 2em;
   margin: 0 10px 0 0;
+}
+
+.overlay .wrapper-form .form-heading .form-heading__title p {
+  font-size: 2em;
+  font-weight: 600;
+  display: none;
+}
+
+.overlay .wrapper-form .form-heading .form-heading__title .show-title {
+  display: block;
 }
 
 .overlay .wrapper-form .tabs-form {
@@ -627,13 +633,14 @@ input,
 }
 
 .overlay .wrapper-form .tabs-form .tabs-form__item {
+  cursor: pointer;
   font-family: "Open Sans", sans-serif;
   font-size: 1.4em;
   font-weight: 700;
   margin-right: 15px;
 }
 
-.overlay .wrapper-form .tabs-form .active {
+.overlay .wrapper-form .tabs-form .active-tab {
   color: #976efa;
 }
 
@@ -644,10 +651,13 @@ input,
   position: absolute;
   bottom: -2px;
   left: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .overlay .wrapper-form .form__list .form__item {
   margin: 20px 0 0 0;
+  display: none;
 }
 
 .overlay .wrapper-form .form__list .form__item .form-group {
@@ -794,6 +804,10 @@ input,
   text-decoration: underline;
 }
 
+.overlay .wrapper-form .form__list .show-form {
+  display: block;
+}
+
 .overlay .close-form {
   margin: 0 0 0 10px;
   cursor: pointer;
@@ -802,10 +816,11 @@ input,
 
 .overlay .close-form i {
   font-size: 1.6em;
-  padding: 5px;
+  padding: 8px;
+  color: white;
 }
 
 .overlay .close-form:hover {
-  background: #e5e5e5;
+  background: rgba(229, 229, 229, 0.5);
 }
 /*# sourceMappingURL=style.css.map */

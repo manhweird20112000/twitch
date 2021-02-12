@@ -489,19 +489,25 @@ input,
         background: white;
         padding: 20px;
         border-radius: 10px;
+        transition: all 1s ease;
         .form-heading {
             margin: 20px 0 10px 0;
-            .form-heading__item {
-                text-align: center;
-                font-size: 2em;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                .form-heading__icon {
-                    color: $color-primary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .form-heading__icon {
+                font-size: 4em;
+                color: $color-primary;
+                margin: 0 10px 0 0;
+            }
+            .form-heading__title {
+                p {
                     font-size: 2em;
-                    margin: 0 10px 0 0;
+                    font-weight: 600;
+                    display: none;
+                }
+                .show-title {
+                    display: block;
                 }
             }
         }
@@ -512,24 +518,28 @@ input,
             border-bottom: 1px solid $second-primary;
             position: relative;
             .tabs-form__item {
+                cursor: pointer;
                 font-family: $font-family2;
                 font-size: 1.4em;
                 font-weight: 700;
                 margin-right: 15px;
             }
-            .active {
+            .active-tab {
                 color: $color-primary;
             }
             .line-form {
                 width: 75px;
                 height: 3px;
                 background: $color-primary;
-                @include positison("bl", -2px, 0)
+                @include positison("bl", -2px, 0);
+                transition: all 0.5s ease;
             }
         }
         .form__list {
+            // display: flex;
             .form__item {
                 margin: 20px 0 0 0;
+                display: none;
                 .form-group {
                     margin-bottom: 10px;
                     label {
@@ -650,6 +660,9 @@ input,
                     }
                 }
             }
+            .show-form {
+                display: block;
+            }
         }
     }
     .close-form {
@@ -658,10 +671,11 @@ input,
         border-radius: 5px;
         i {
             font-size: 1.6em;
-            padding: 5px;
+            padding: 8px;
+            color: white;
         }
         &:hover {
-            background: $second-primary;
+            background: rgba($color: $second-primary, $alpha: 0.5);
         }
     }
 }
