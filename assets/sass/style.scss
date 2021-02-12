@@ -1,4 +1,6 @@
 // Variable
+$font-family2: 'Open Sans',
+sans-serif;
 $font-family: 'Work Sans',
 sans-serif;
 $color-primary: #976efa;
@@ -482,4 +484,184 @@ input,
     display: flex;
     align-items: center;
     justify-content: center;
+    .wrapper-form {
+        width: 422px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        .form-heading {
+            margin: 20px 0 10px 0;
+            .form-heading__item {
+                text-align: center;
+                font-size: 2em;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .form-heading__icon {
+                    color: $color-primary;
+                    font-size: 2em;
+                    margin: 0 10px 0 0;
+                }
+            }
+        }
+        .tabs-form {
+            display: flex;
+            align-items: center;
+            padding: 5px 0 8px 0;
+            border-bottom: 1px solid $second-primary;
+            position: relative;
+            .tabs-form__item {
+                font-family: $font-family2;
+                font-size: 1.4em;
+                font-weight: 700;
+                margin-right: 15px;
+            }
+            .active {
+                color: $color-primary;
+            }
+            .line-form {
+                width: 75px;
+                height: 3px;
+                background: $color-primary;
+                @include positison("bl", -2px, 0)
+            }
+        }
+        .form__list {
+            .form__item {
+                margin: 20px 0 0 0;
+                .form-group {
+                    margin-bottom: 10px;
+                    label {
+                        font-size: 1.4em;
+                        font-weight: 600;
+                    }
+                    input {
+                        width: 100%;
+                        height: 32px;
+                        background: $second-primary;
+                        border-radius: 5px;
+                        padding-left: 10px;
+                        margin: 5px 0 12px 0;
+                        font-family: $font-family;
+                        font-size: 1.6em;
+                        border: 2px solid transparent;
+                        &:hover {
+                            border: 2px solid #7e7e7e;
+                        }
+                        &:focus {
+                            background: white;
+                            border: 2px solid $color-primary;
+                        }
+                    }
+                    .form-messages {
+                        font-size: 1.4em;
+                        color: red;
+                    }
+                    .btn--login {
+                        width: 100%;
+                        height: 32px;
+                        background: $color-primary;
+                        font-size: 1.4em;
+                        color: white;
+                        font-weight: 600;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        margin: 0 0 10px 0;
+                        &:hover {
+                            background: #7d65e9;
+                        }
+                    }
+                    .horizontal-line {
+                        width: 100%;
+                        background: $second-primary;
+                        height: 1px;
+                        position: relative;
+                        &::before {
+                            content: "hoặc ";
+                            @include positison('tl', 50%, 50%);
+                            font-size: 1.5em;
+                            background: white;
+                            padding: 5px;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    .btn--login-facebook {
+                        margin: 20px 0 10px 0;
+                        min-width: 183px;
+                        height: 30px;
+                        background: #3a5998;
+                        color: white;
+                        font-size: 1.4em;
+                        cursor: pointer;
+                        &:hover {
+                            background: #587cc5;
+                        }
+                    }
+                    .btn--register {
+                        @extend .btn--login;
+                    }
+                    .birthday {
+                        input {
+                            width: 40%
+                        }
+                        @include flexBox();
+                        #month {
+                            width: 60%;
+                            height: 32px;
+                            border: none;
+                            outline: none;
+                            border-radius: 5px;
+                            margin: 0 10px 6px 10px;
+                            font-size: $font-family;
+                            padding: 0 10px 0 10px;
+                            border: 2px solid transparent;
+                            &:hover {
+                                border: 2px solid #7e7e7e;
+                            }
+                            &:focus {
+                                background: white;
+                                border: 2px solid $color-primary;
+                            }
+                        }
+                    }
+                }
+                .policy {
+                    text-align: center;
+                    font-size: 1.2em;
+                    margin: 0 0 20px 0;
+                    a {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .form-group__facebook {
+                    text-align: center;
+                }
+                .form-help {
+                    display: block;
+                    font-size: 1.3em;
+                    font-weight: 500;
+                    color: $color-primary;
+                    margin: 0 0 20px 0;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .close-form {
+        margin: 0 0 0 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        i {
+            font-size: 1.6em;
+            padding: 5px;
+        }
+        &:hover {
+            background: $second-primary;
+        }
+    }
 }
