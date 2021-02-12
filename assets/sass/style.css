@@ -129,10 +129,6 @@ input,
   color: black;
 }
 
-.header .header-left .main-menu .main-menu__item--option:hover .sub-option {
-  display: block;
-}
-
 .header .header-left .main-menu .main-menu__item--option .sub-option {
   position: absolute;
   top: 30px;
@@ -208,6 +204,10 @@ input,
   background: transparent;
 }
 
+.header .header-left .main-menu .main-menu__item--option .show {
+  display: block;
+}
+
 .header .header-left .main-menu .active-item {
   color: #976efa;
 }
@@ -216,9 +216,11 @@ input,
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 65px;
+  width: 0;
   background: #976efa;
   height: 3px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .header .header-center .search {
@@ -257,9 +259,12 @@ input,
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   background: #cccccc;
-  cursor: pointer;
   color: white;
   font-size: 1.6em;
+}
+
+.header .header-center .search .btn--search:hover {
+  background-color: #cccccc;
 }
 
 .header .header-right {
@@ -312,10 +317,6 @@ input,
 .header .header-right .reward .reward__icon:hover {
   border-radius: 5px;
   background: #e5e5e5;
-}
-
-.header .header-right .reward .reward__icon:hover .reward__info {
-  display: block;
 }
 
 .header .header-right .reward .reward__icon .count-reward {
@@ -389,26 +390,26 @@ input,
   background: #e5e5e5;
 }
 
+.header .header-right .account .account__icon:hover .account-option {
+  display: block;
+}
+
 .header .header-right .account .account-option {
+  display: none;
   position: absolute;
   top: 40px;
-  right: 10px;
+  right: 0;
   width: 188px;
-  min-width: 100%;
+  height: 370px;
   background: white;
   border-radius: 5px;
-  padding: 8px;
+  overflow: hidden;
   -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 .header .header-right .account .account-option .wrapper-option {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 8px;
 }
 
 .header .header-right .account .account-option .wrapper-option .languages {
@@ -418,15 +419,165 @@ input,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 10px 5px;
+  padding: 8px 3px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
+.header .header-right .account .account-option .wrapper-option .languages .languages__icon-left, .header .header-right .account .account-option .wrapper-option .languages .languages__icon-right {
+  font-size: 1.6em;
+}
+
+.header .header-right .account .account-option .wrapper-option .languages .languages__title {
+  font-size: 1.5em;
+  margin: 0 60px 0 10px;
+}
+
 .header .header-right .account .account-option .wrapper-option .languages:hover {
+  background-color: #e5e5e5;
+}
+
+.header .header-right .account .account-option .wrapper-option .dark-theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3px 0 10px 0;
+  padding: 5px 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header .header-right .account .account-option .wrapper-option .dark-theme .dark-theme__icon-left {
+  font-size: 1.6em;
+}
+
+.header .header-right .account .account-option .wrapper-option .dark-theme .dark-theme__title {
+  font-size: 1.5em;
+  margin: 0 15px 0 5px;
+}
+
+.header .header-right .account .account-option .wrapper-option .dark-theme #dark {
+  display: none;
+}
+
+.header .header-right .account .account-option .wrapper-option .dark-theme label {
+  width: 50px;
+  height: 26px;
+  border-radius: 30px;
+  border: 2px solid black;
+  line-height: 25px;
+  cursor: pointer;
+}
+
+.header .header-right .account .account-option .wrapper-option .dark-theme label .dark__btn {
+  margin: 1px 2px 3px 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.header .header-right .account .account-option .wrapper-option .logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px 0 0 0;
+  padding: 5px 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header .header-right .account .account-option .wrapper-option .logout .logout__left {
+  font-size: 1.6em;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin: 0 10px 2px 0;
+}
+
+.header .header-right .account .account-option .wrapper-option .logout .logout__title {
+  font-size: 1.6em;
+}
+
+.header .header-right .account .account-option .wrapper-option .logout:hover {
   background: #e5e5e5;
+}
+
+.header .header-right .account .account-option .languages-option .languages__heading {
+  font-size: 1.4em;
+  font-weight: 500;
+  background: #e5e5e5;
+  padding: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .header-right .account .account-option .languages-option .languages__heading .languages-option__icon {
+  float: left;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin: 0 30px 0 0;
+}
+
+.header .header-right .account .account-option .languages-option .languages__heading .languages-option__icon:hover {
+  background: #8d8d8d;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list {
+  padding: 0 5px;
+  margin: 0px 0 0 0;
+  overflow-y: scroll;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list li {
+  cursor: pointer;
+  padding: 6px;
+  font-size: 1.4em;
+  border-radius: 5px;
+  margin: 2px 0;
+  position: relative;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list li:hover {
+  background: #e5e5e5;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list .active-languages {
+  background: #976efa;
+  color: white;
+}
+
+.header .header-right .account .show {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */
