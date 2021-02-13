@@ -151,3 +151,100 @@ filterCategory.addEventListener('click', () => {
     })
 
 })
+
+const games = [{
+        id: 1,
+        name: 'VALORANT',
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/VALORANT-285x380.jpg',
+        viewer: '40,8 N',
+        categories: [
+            'Tay súng',
+        ]
+    },
+    {
+        id: 2,
+        name: 'Counter-Strike: Global Offensive',
+        viewer: '46,7 N',
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/./Counter-Strike:%20Global%20Offensive-285x380.jpg',
+        categories: [
+            'Tay súng',
+            'Hành động',
+            'Bắn Súng Góc Nhìn Thứ Nhất'
+        ]
+    },
+    {
+        id: 3,
+        name: 'Rust',
+        viewer: '50,4 N',
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/Rust-285x380.jpg',
+        categories: [
+            'Game phiêu lưu',
+            'Tay súng',
+            'Hành động',
+            'Bắn Súng Góc Nhìn Thứ Nhất',
+            'Nhập vai',
+            'Game Độc lập'
+        ]
+    },
+    {
+        id: 4,
+        name: 'Apex Legends',
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/Apex%20Legends-285x380.jpg',
+        viewer: '55 N',
+        categories: [
+            'Tay súng',
+            'Hành động',
+            'Bắn Súng Góc Nhìn Thứ Nhất',
+        ]
+    },
+    {
+        id: 5,
+        name: 'Grand Theft Auto V',
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/Grand%20Theft%20Auto%20V-285x380.jpg',
+        viewer: '59,3 N',
+        categories: [
+            'Game lái/đua xe',
+            'Game phiêu lưu',
+            'Tay súng',
+            'Hành động',
+            'Bắn Súng Góc Nhìn Thứ Nhất',
+        ]
+    },
+    {
+        id: 6,
+        name: 'Krunker',
+        viewer: '703',
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/Krunker-285x380.jpg',
+        categories: [
+            'Tay súng',
+            'Thế giới mở',
+            'Bắn Súng Góc Nhìn Thứ Nhất',
+        ]
+    },
+    {
+        id: 7,
+        name: 'Overwatch',
+        viewer: '12,2 N',
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-285x380.jpg',
+        categories: [
+            'Hành động',
+            'Chiến thuật ',
+            'Tay súng',
+            'Thế giới mở',
+            'Bắn Súng Góc Nhìn Thứ Nhất',
+        ]
+    },
+    {
+        id: 8,
+        name: 'Call of Duty: Black Ops 4',
+        viewer: '442',
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-285x380.jpg',
+        categories: [
+            'Hành động',
+            'Tay súng',
+            'Bắn Súng Góc Nhìn Thứ Nhất',
+        ]
+    },
+
+
+]
