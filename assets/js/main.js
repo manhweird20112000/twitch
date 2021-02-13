@@ -122,6 +122,7 @@ function closeForm() {
 
     btnClose.addEventListener('click', function() {
         overlay.style.display = 'none';
+        // overlay.classList.remove('active-overlay');
 
     })
 }
@@ -155,7 +156,6 @@ filterCategory.addEventListener('click', () => {
 let wapperOption = document.querySelector('.wrapper-option');
 let optionLanguages = document.querySelector('.languages');
 let languages = document.querySelector('.languages-option');
-console.log(optionLanguages);
 optionLanguages.addEventListener('click', () => {
     wapperOption.style.display = 'none';
     languages.style.display = 'block';
@@ -176,99 +176,106 @@ optionLanguages.addEventListener('click', () => {
     })
 })
 
+
+
 const games = [{
         id: 1,
         name: 'VALORANT',
         image: 'https://static-cdn.jtvnw.net/ttv-boxart/VALORANT-285x380.jpg',
         viewer: '40,8 N',
-        categories: [
-            'Tay súng',
-        ]
+        categories: 'Tay súng',
     },
     {
         id: 2,
         name: 'Counter-Strike: Global Offensive',
         viewer: '46,7 N',
         image: 'https://static-cdn.jtvnw.net/ttv-boxart/./Counter-Strike:%20Global%20Offensive-285x380.jpg',
-        categories: [
-            'Tay súng',
-            'Hành động',
-            'Bắn Súng Góc Nhìn Thứ Nhất'
-        ]
+        categories: 'Bắn Súng Góc Nhìn Thứ Nhất'
     },
     {
         id: 3,
         name: 'Rust',
         viewer: '50,4 N',
         image: 'https://static-cdn.jtvnw.net/ttv-boxart/Rust-285x380.jpg',
-        categories: [
-            'Game phiêu lưu',
-            'Tay súng',
-            'Hành động',
-            'Bắn Súng Góc Nhìn Thứ Nhất',
-            'Nhập vai',
-            'Game Độc lập'
-        ]
+        categories: 'Game Độc lập'
     },
     {
         id: 4,
         name: 'Apex Legends',
         image: 'https://static-cdn.jtvnw.net/ttv-boxart/Apex%20Legends-285x380.jpg',
         viewer: '55 N',
-        categories: [
-            'Tay súng',
-            'Hành động',
-            'Bắn Súng Góc Nhìn Thứ Nhất',
-        ]
+        categories: 'Hành động'
     },
     {
         id: 5,
         name: 'Grand Theft Auto V',
         image: 'https://static-cdn.jtvnw.net/ttv-boxart/Grand%20Theft%20Auto%20V-285x380.jpg',
         viewer: '59,3 N',
-        categories: [
-            'Game lái/đua xe',
-            'Game phiêu lưu',
-            'Tay súng',
-            'Hành động',
-            'Bắn Súng Góc Nhìn Thứ Nhất',
-        ]
+        categories: 'Game phiêu lưu',
     },
     {
         id: 6,
         name: 'Krunker',
         viewer: '703',
         image: 'https://static-cdn.jtvnw.net/ttv-boxart/Krunker-285x380.jpg',
-        categories: [
-            'Tay súng',
-            'Thế giới mở',
-            'Bắn Súng Góc Nhìn Thứ Nhất',
-        ]
+        categories: 'Bắn Súng Góc Nhìn Thứ Nhất',
     },
     {
         id: 7,
         name: 'Overwatch',
         viewer: '12,2 N',
         image: 'https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-285x380.jpg',
-        categories: [
-            'Hành động',
-            'Chiến thuật ',
-            'Tay súng',
-            'Thế giới mở',
-            'Bắn Súng Góc Nhìn Thứ Nhất',
-        ]
+        categories: 'Thế giới mở'
     },
     {
         id: 8,
         name: 'Call of Duty: Black Ops 4',
         viewer: '442',
-        image: 'https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-285x380.jpg',
-        categories: [
-            'Hành động',
-            'Tay súng',
-            'Bắn Súng Góc Nhìn Thứ Nhất',
-        ]
+        image: 'https://static-cdn.jtvnw.net/ttv-boxart/./Call%20of%20Duty:%20Black%20Ops%204-285x380.jpg',
+        categories: 'Bắn Súng Góc Nhìn Thứ Nhất'
     },
 
 
-]
+];
+
+
+let promise = new Promise(
+    function(resolve, reject) {
+        if (games) {
+            resolve(games);
+        } else {
+            reject('Not found');
+        }
+    }
+);
+promise
+
+    .then(function(data) {
+        let htmls = data.map((game) => {
+            return ` <div class="category__item">
+                <div class="category-item__img">
+                    <img src="${game.image}" alt="" srcset="">
+                </div>
+                <p class="category__name">
+                ${game.name}
+                </p>
+                <p class="category__viewer">
+                ${game.viewer} người xem
+                </p>
+                <div class="categories-game">
+                
+                <div class="categories-game__item">
+                 ${game.categories}
+                </div>
+                
+            </div>
+        </div>`
+        }).join(', ');
+
+        let listCate = document.querySelector('.category__list');
+        listCate.innerHTML = htmls;
+
+    })
+    .catch(function(erorr) {
+        console.log(erorr);
+    })

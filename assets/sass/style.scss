@@ -85,7 +85,7 @@ input,
     box-shadow: 1px 0px 10px 0.5px rgba($color: #000000, $alpha: 0.2);
     @include flexBox();
     justify-content: space-between;
-    z-index: 1;
+    z-index: 2;
     .header-left {
         @include flexBox();
         .logo {
@@ -355,10 +355,8 @@ input,
                 display: none;
                 @include positison('tr', 40px, 0);
                 width: 188px;
-                // height: 100%;
                 background: white;
                 border-radius: 5px;
-                // padding: 8px;
                 overflow: hidden;
                 box-shadow: 1px 1px 5px 1px rgba($color: #000000, $alpha: 0.2);
                 .wrapper-option {
@@ -503,7 +501,7 @@ input,
 // Form 
 .overlay {
     position: fixed;
-    top: 0;
+    top: 0px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -511,6 +509,7 @@ input,
     @include flexBox();
     justify-content: center;
     visibility: hidden;
+    z-index: 1;
     .wrapper-form {
         width: 422px;
         background: white;
@@ -774,13 +773,26 @@ input,
         }
     }
     .main-content {
+        height: calc(100vh - 50px);
         width: 100%;
-        // overflow-y: scroll;
-        height: 100%;
+        overflow-y: scroll;
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: rgb(122, 122, 122);
+        }
         .main-content__item {
             padding: 30px 0 0 30px;
             .main-content__heading {
-                font-size: 5.5em;
+                font-family: $font-family2;
+                font-size: 5.2em;
                 margin-bottom: 28px;
             }
             .content-tab {
@@ -880,6 +892,7 @@ input,
                         border-radius: 10px;
                         box-shadow: 0px 0px 5px 0.5px rgba($color: #000000, $alpha: 0.1);
                         visibility: hidden;
+                        z-index: 2;
                         .sub-sort__item {
                             @include flexBox();
                             padding: 8px;
@@ -916,7 +929,7 @@ input,
                         cursor: pointer;
                         .category__item {
                             width: 185px;
-                            margin: 0px 5px 20px 5px;
+                            margin: 0px 2px 20px 5px;
                             // width: getItem(8);
                             min-height: 340px;
                             // margin: 0 0 20px 0;
@@ -942,6 +955,9 @@ input,
                                 font-weight: 700;
                                 margin-bottom: 5px;
                                 color: rgb(22, 22, 22);
+                                overflow-x: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
                             }
                             .category__viewer {
                                 font-family: $font-family2;
@@ -953,7 +969,7 @@ input,
                                 @include flexBox();
                                 flex-wrap: wrap;
                                 .categories-game__item {
-                                    font-size: 1.2em;
+                                    font-size: 1.1em;
                                     margin: 0 3px 0 0;
                                     padding: 4px 8px;
                                     background: $second-primary;
