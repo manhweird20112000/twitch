@@ -42,6 +42,7 @@ btnLogin.onclick = function() {
     mainForm.classList.add('show-form');
 
     tabFormOverlay();
+    closeForm();
 }
 
 btnRegister.onclick = function() {
@@ -55,6 +56,7 @@ btnRegister.onclick = function() {
     mainForm.classList.add('show-form');
 
     tabFormOverlay();
+    closeForm();
 
 }
 
@@ -123,4 +125,28 @@ function closeForm() {
 
     })
 }
-closeForm();
+
+let filterCategory = document.querySelector('.main-sort');
+
+filterCategory.addEventListener('click', () => {
+    let subFilter = document.querySelector('.sub-sort');
+
+    subFilter.classList.toggle('active-filter-category');
+    let filters = document.querySelectorAll('.sub-sort__item');
+    filters.forEach((choose, index) => {
+        choose.addEventListener('click', () => {
+            const content = ['Đề xuất cho bạn', 'Lượng xem (Cao đến thấp)'];
+            let activeCategories = document.querySelector('.active-filter');
+
+            activeCategories.classList.remove('active-filter');
+            choose.classList.add('active-filter');
+
+            let itemMain = document.querySelector('.main-sort__item');
+
+            let contentMainFilter = itemMain.querySelector('span');
+
+            contentMainFilter.innerText = content[index];
+
+        })
+    })
+})
