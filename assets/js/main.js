@@ -149,4 +149,5 @@ filterCategory.addEventListener('click', () => {
 
         })
     })
+
 })

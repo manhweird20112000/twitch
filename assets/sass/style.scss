@@ -12,6 +12,10 @@ $background-color: #f7f7f8;
     align-items: center;
 }
 
+@function getItem($item) {
+    @return 100% / $item;
+}
+
 @mixin positison($type, $y, $x) {
     position: absolute;
     @if($type=='tl') {
@@ -50,6 +54,7 @@ body {
     max-width: 100vw;
     margin: 0 auto;
     max-height: 100vh;
+    overflow: hidden;
 }
 
 a {
@@ -751,8 +756,10 @@ input,
     }
     .main-content {
         width: 100%;
-        margin: 30px 30px 0 30px;
+        // overflow-y: scroll;
+        height: 100%;
         .main-content__item {
+            padding: 30px 0 0 30px;
             .main-content__heading {
                 font-size: 5.5em;
                 margin-bottom: 28px;
@@ -781,7 +788,7 @@ input,
             .content-filter {
                 @include flexBox();
                 justify-content: space-between;
-                margin: 0 0 30px 0;
+                margin: 0 30px 30px 0;
                 .search-filter {
                     @include flexBox();
                     .search-filter__heading {
@@ -878,6 +885,65 @@ input,
                     }
                     .active-filter-category {
                         visibility: visible;
+                    }
+                }
+            }
+            .content-category {
+                .content-category__item {
+                    .category__list {
+                        @include flexBox();
+                        flex-wrap: wrap;
+                        // justify-content: space-between;
+                        cursor: pointer;
+                        .category__item {
+                            width: 185px;
+                            margin: 0px 5px 20px 5px;
+                            // width: getItem(8);
+                            min-height: 340px;
+                            // margin: 0 0 20px 0;
+                            .category-item__img {
+                                height: 246.66px;
+                                width: 100%;
+                                position: relative;
+                                background: $color-primary;
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                    object-fit: cover;
+                                    &:hover {
+                                        @include positison('bl', 7px, 7px);
+                                        transition: all 1s ease;
+                                    }
+                                }
+                            }
+                            .category__name {
+                                margin-top: 10px;
+                                font-family: $font-family2;
+                                font-size: 1.5em;
+                                font-weight: 700;
+                                margin-bottom: 5px;
+                                color: rgb(22, 22, 22);
+                            }
+                            .category__viewer {
+                                font-family: $font-family2;
+                                font-size: 1.3em;
+                                color: #333;
+                            }
+                            .categories-game {
+                                margin: 10px 0 0 0;
+                                @include flexBox();
+                                flex-wrap: wrap;
+                                .categories-game__item {
+                                    font-size: 1.2em;
+                                    margin: 0 3px 0 0;
+                                    padding: 4px 8px;
+                                    background: $second-primary;
+                                    font-weight: 600;
+                                    color: #333;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
                     }
                 }
             }
