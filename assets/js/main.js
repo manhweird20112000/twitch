@@ -129,27 +129,51 @@ function closeForm() {
 let filterCategory = document.querySelector('.main-sort');
 
 filterCategory.addEventListener('click', () => {
-    let subFilter = document.querySelector('.sub-sort');
+        let subFilter = document.querySelector('.sub-sort');
 
-    subFilter.classList.toggle('active-filter-category');
-    let filters = document.querySelectorAll('.sub-sort__item');
-    filters.forEach((choose, index) => {
-        choose.addEventListener('click', () => {
-            const content = ['Đề xuất cho bạn', 'Lượng xem (Cao đến thấp)'];
-            let activeCategories = document.querySelector('.active-filter');
+        subFilter.classList.toggle('active-filter-category');
+        let filters = document.querySelectorAll('.sub-sort__item');
+        filters.forEach((choose, index) => {
+            choose.addEventListener('click', () => {
+                const content = ['Đề xuất cho bạn', 'Lượng xem (Cao đến thấp)'];
+                let activeCategories = document.querySelector('.active-filter');
 
-            activeCategories.classList.remove('active-filter');
-            choose.classList.add('active-filter');
+                activeCategories.classList.remove('active-filter');
+                choose.classList.add('active-filter');
 
-            let itemMain = document.querySelector('.main-sort__item');
+                let itemMain = document.querySelector('.main-sort__item');
 
-            let contentMainFilter = itemMain.querySelector('span');
+                let contentMainFilter = itemMain.querySelector('span');
 
-            contentMainFilter.innerText = content[index];
+                contentMainFilter.innerText = content[index];
 
+            })
+        })
+
+    })
+    // let accountOption = document.querySelector('.account-option');
+let wapperOption = document.querySelector('.wrapper-option');
+let optionLanguages = document.querySelector('.languages');
+let languages = document.querySelector('.languages-option');
+console.log(optionLanguages);
+optionLanguages.addEventListener('click', () => {
+    wapperOption.style.display = 'none';
+    languages.style.display = 'block';
+    // languages.style.width = '330px';
+    let listLanguages = document.querySelectorAll('.languages__list li');
+    listLanguages.forEach((item) => {
+        let activeLanguges = document.querySelector('.active-languages');
+        item.addEventListener('click', function() {
+            activeLanguges.classList.remove('active-languages');
+
+            item.classList.add('active-languages');
         })
     })
-
+    let closeLanguage = document.querySelector('.languages-option__icon');
+    closeLanguage.addEventListener('click', () => {
+        wapperOption.style.display = 'block';
+        languages.style.display = 'none';
+    })
 })
 
 const games = [{

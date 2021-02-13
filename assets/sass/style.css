@@ -17,6 +17,7 @@ body {
   margin: 0 auto;
   max-height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
 a {
@@ -38,13 +39,12 @@ input,
 }
 
 .header {
+  position: relative;
   max-height: 50px;
   line-height: auto;
   background-color: white;
   -webkit-box-shadow: 1px 0px 10px 0.5px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 0px 10px 0.5px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  position: -webkit-sticky;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,6 +54,7 @@ input,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 1;
 }
 
 .header .header-left {
@@ -404,7 +405,6 @@ input,
   top: 40px;
   right: 0;
   width: 188px;
-  height: 370px;
   background: white;
   border-radius: 5px;
   overflow: hidden;
@@ -514,17 +514,21 @@ input,
   background: #e5e5e5;
 }
 
+.header .header-right .account .account-option .languages-option {
+  display: none;
+}
+
 .header .header-right .account .account-option .languages-option .languages__heading {
-  font-size: 1.4em;
-  font-weight: 500;
-  background: #e5e5e5;
-  padding: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1.4em;
+  font-weight: 500;
+  background: #e5e5e5;
+  padding: 3px;
 }
 
 .header .header-right .account .account-option .languages-option .languages__heading .languages-option__icon {
@@ -540,9 +544,29 @@ input,
 }
 
 .header .header-right .account .account-option .languages-option .languages__list {
+  height: 330px;
   padding: 0 5px;
   margin: 0px 0 0 0;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list:hover {
   overflow-y: scroll;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #777171;
 }
 
 .header .header-right .account .account-option .languages-option .languages__list li {
@@ -561,6 +585,10 @@ input,
 .header .header-right .account .account-option .languages-option .languages__list .active-languages {
   background: #976efa;
   color: white;
+}
+
+.header .header-right .account .account-option .languages-option .languages__list .active-languages:hover {
+  background: #976efa;
 }
 
 .header .header-right .account .show {

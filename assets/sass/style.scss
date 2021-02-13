@@ -55,6 +55,7 @@ body {
     margin: 0 auto;
     max-height: 100vh;
     overflow: hidden;
+    position: relative;
 }
 
 a {
@@ -77,15 +78,14 @@ input,
 
 // Header
 .header {
-    // min-height: 50px;
+    position: relative;
     max-height: 50px;
     line-height: auto;
     background-color: white;
     box-shadow: 1px 0px 10px 0.5px rgba($color: #000000, $alpha: 0.2);
-    position: sticky;
-    position: -webkit-sticky;
     @include flexBox();
     justify-content: space-between;
+    z-index: 1;
     .header-left {
         @include flexBox();
         .logo {
@@ -355,7 +355,7 @@ input,
                 display: none;
                 @include positison('tr', 40px, 0);
                 width: 188px;
-                height: 370px;
+                // height: 100%;
                 background: white;
                 border-radius: 5px;
                 // padding: 8px;
@@ -436,11 +436,11 @@ input,
                 }
                 .languages-option {
                     .languages__heading {
+                        @include flexBox();
                         font-size: 1.4em;
                         font-weight: 500;
                         background: $second-primary;
                         padding: 3px;
-                        @include flexBox();
                         .languages-option__icon {
                             float: left;
                             cursor: pointer;
@@ -453,9 +453,24 @@ input,
                         }
                     }
                     .languages__list {
+                        height: 330px;
                         padding: 0 5px;
                         margin: 0px 0 0 0;
-                        overflow-y: scroll;
+                        &:hover {
+                            overflow-y: scroll;
+                        }
+                        &::-webkit-scrollbar-track {
+                            border-radius: 10px;
+                        }
+                        &::-webkit-scrollbar {
+                            width: 5px;
+                            background-color: #F5F5F5;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: 10px;
+                            box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+                            background-color: rgb(119, 113, 113);
+                        }
                         li {
                             cursor: pointer;
                             padding: 6px;
@@ -470,8 +485,12 @@ input,
                         .active-languages {
                             background: $color-primary;
                             color: white;
+                            &:hover {
+                                background: $color-primary;
+                            }
                         }
                     }
+                    display: none;
                 }
             }
             .show {
