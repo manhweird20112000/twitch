@@ -224,8 +224,8 @@ input,
   width: 0;
   background: #976efa;
   height: 3px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header .header-center .search {
@@ -976,6 +976,7 @@ input,
 
 .content .main-content .main-content__item {
   padding: 30px 0 0 30px;
+  display: none;
 }
 
 .content .main-content .main-content__item .main-content__heading {
@@ -994,6 +995,7 @@ input,
           align-items: center;
   padding-bottom: 10px;
   margin-bottom: 25px;
+  cursor: pointer;
 }
 
 .content .main-content .main-content__item .content-tab .content-tab__item {
@@ -1014,6 +1016,8 @@ input,
   width: 90px;
   height: 2.5px;
   background: #976efa;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .content .main-content .main-content__item .content-filter {
@@ -1173,6 +1177,10 @@ input,
   visibility: visible;
 }
 
+.content .main-content .main-content__item .content-category .content-category__item {
+  display: none;
+}
+
 .content .main-content .main-content__item .content-category .content-category__item .category__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1203,14 +1211,13 @@ input,
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .content .main-content .main-content__item .content-category .content-category__item .category__list .category__item .category-item__img img:hover {
-  position: absolute;
-  bottom: 7px;
-  left: 7px;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transform: translate(6px, -6px);
+          transform: translate(6px, -6px);
 }
 
 .content .main-content .main-content__item .content-category .content-category__item .category__list .category__item .category__name {
@@ -1251,5 +1258,122 @@ input,
   font-weight: 600;
   color: #333;
   border-radius: 10px;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item {
+  width: 304.8px;
+  margin-right: 8px;
+  margin-bottom: 20px;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .stream-background {
+  width: 304.8px;
+  position: relative;
+  background-color: #976efa;
+  height: 171px;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .stream-background .stream-background__img {
+  width: 304.8px;
+  height: 171px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .stream-background .stream-background__img:hover {
+  -webkit-transform: translate(6px, -6px);
+          transform: translate(6px, -6px);
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .stream-background .stream-background__img .stream__notification {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px;
+  background: red;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  border-radius: 5px;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .stream-background .stream-background__img .count__viewer-stream {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .channel {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .channel img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 10px 0 0;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .channel .channel-info .channel-info__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6em;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .channel .channel-info .channel-info__name, .content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .channel .channel-info .channel-info__name-game {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4em;
+  color: #585858;
+  margin: 0 0 3px 0;
+}
+
+.content .main-content .main-content__item .content-category .content-category__item .stream__list .stream__item .channel .channel-info .channel-info__languages {
+  margin: 5px 0 0 0;
+  text-align: center;
+  width: 80px;
+  height: 20px;
+  background: #d4d3d3;
+  line-height: 20px;
+  font-size: 1.2em;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #575757;
+}
+
+.content .main-content .main-content__item .content-category .active-item__content {
+  display: block;
+}
+
+.content .main-content .active-content {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

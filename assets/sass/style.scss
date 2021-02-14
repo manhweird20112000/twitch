@@ -216,7 +216,7 @@ input,
                 width: 0;
                 background: $color-primary;
                 height: 3px;
-                transition: all 0.5s ease;
+                transition: all 0.3s ease;
             }
         }
     }
@@ -790,6 +790,7 @@ input,
         }
         .main-content__item {
             padding: 30px 0 0 30px;
+            display: none;
             .main-content__heading {
                 font-family: $font-family2;
                 font-size: 5.2em;
@@ -800,6 +801,7 @@ input,
                 @include flexBox();
                 padding-bottom: 10px;
                 margin-bottom: 25px;
+                cursor: pointer;
                 .content-tab__item {
                     font-family: $font-family2;
                     margin-right: 20px;
@@ -814,6 +816,7 @@ input,
                     width: 90px;
                     height: 2.5px;
                     background: $color-primary;
+                    transition: all .2s ease-in-out
                 }
             }
             .content-filter {
@@ -922,6 +925,7 @@ input,
             }
             .content-category {
                 .content-category__item {
+                    display: none;
                     .category__list {
                         @include flexBox();
                         flex-wrap: wrap;
@@ -942,9 +946,9 @@ input,
                                     width: 100%;
                                     height: auto;
                                     object-fit: cover;
+                                    transition: all 0.2s ease;
                                     &:hover {
-                                        @include positison('bl', 7px, 7px);
-                                        transition: all 1s ease;
+                                        transform: translate(6px, -6px);
                                     }
                                 }
                             }
@@ -980,8 +984,101 @@ input,
                             }
                         }
                     }
+                    .stream__list {
+                        @include flexBox();
+                        flex-wrap: wrap;
+                        .stream__item {
+                            width: 304.8px;
+                            margin-right: 8px;
+                            margin-bottom: 20px;
+                            .stream-background {
+                                width: 304.8px;
+                                position: relative;
+                                background-color: $color-primary;
+                                height: 171px;
+                                .stream-background__img {
+                                    width: 304.8px;
+                                    height: 171px;
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                    position: relative;
+                                    cursor: pointer;
+                                    transition: all 0.2s ease-in;
+                                    &:hover {
+                                        transform: translate(6px, -6px);
+                                    }
+                                    .stream__notification {
+                                        @include positison('tl', 10px, 10px);
+                                        padding: 5px;
+                                        background: red;
+                                        font-size: 1.2em;
+                                        text-transform: uppercase;
+                                        font-weight: 700;
+                                        color: white;
+                                        border-radius: 5px;
+                                    }
+                                    .count__viewer-stream {
+                                        @include positison('bl', 10px, 10px);
+                                        background: rgba($color: #000000, $alpha: 0.4);
+                                        color: white;
+                                        padding: 5px;
+                                        border-radius: 5px;
+                                        font-size: 1.1em;
+                                    }
+                                }
+                            }
+                            .channel {
+                                margin-top: 10px;
+                                display: flex;
+                                img {
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                    margin: 0 10px 0 0;
+                                }
+                                .channel-info {
+                                    .channel-info__title {
+                                        font-family: $font-family2;
+                                        font-size: 1.6em;
+                                        font-weight: 600;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                    }
+                                    .channel-info__name {
+                                        font-family: $font-family2;
+                                        font-size: 1.4em;
+                                        color: #585858;
+                                        margin: 0 0 3px 0;
+                                    }
+                                    .channel-info__name-game {
+                                        @extend .channel-info__name;
+                                    }
+                                    .channel-info__languages {
+                                        margin: 5px 0 0 0;
+                                        text-align: center;
+                                        width: 80px;
+                                        height: 20px;
+                                        background: #d4d3d3;
+                                        line-height: 20px;
+                                        font-size: 1.2em;
+                                        border-radius: 20px;
+                                        font-weight: 600;
+                                        color: #575757;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .active-item__content {
+                    display: block;
                 }
             }
+        }
+        .active-content {
+            display: block;
         }
     }
 }

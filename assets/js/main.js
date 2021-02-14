@@ -60,6 +60,37 @@ btnRegister.onclick = function() {
 
 }
 
+let tabBrowers = document.querySelectorAll('.content-tab__item');
+let contentCategories = document.querySelectorAll('.content-category__item')
+
+tabBrowers.forEach((tab, index) => {
+    tab.addEventListener('click', function() {
+        let activeTab = document.querySelector('.avtive-tab__categories');
+
+        let categoriesActive = document.querySelector('.active-item__content');
+
+        let line = document.querySelector('.line-category');
+
+
+
+
+
+        activeTab.classList.remove('avtive-tab__categories');
+        tab.classList.add('avtive-tab__categories');
+
+        line.style.left = tab.offsetLeft + "px";
+        line.style.width = tab.offsetWidth + "px";
+
+        categoriesActive.classList.remove('active-item__content');
+
+        contentCategories[index].classList.add('active-item__content');
+
+
+    })
+})
+
+
+
 function tabFormOverlay() {
     tabsForm.forEach((tabForm, index) => {
 
@@ -93,15 +124,22 @@ btnAccount.onclick = function() {
 menuOption.addEventListener('click', function() {
     subOption.classList.toggle('show');
 })
-
+let listContent = document.querySelectorAll('.main-content__item');
 tabs.forEach((tab, index) => {
 
+
     tab.addEventListener('click', function() {
-        tab.classList.add('active-item');
+        // tab.classList.add('active-item');
+        // listContent[index].classList.add('active-content');
         let tabActive = document.querySelector('.main-menu .active-item');
+        let activeContent = document.querySelector('.active-content');
+
 
         tabActive.classList.remove('active-item');
         tab.classList.add('active-item');
+
+        activeContent.classList.remove('active-content');
+        listContent[index].classList.add('active-content');
 
         lineHeader.style.left = tab.offsetLeft + "px";
         lineHeader.style.width = tab.offsetWidth + "px";
